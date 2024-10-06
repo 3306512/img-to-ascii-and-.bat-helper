@@ -4,7 +4,7 @@ from video_formating.vid_ascii import BatchAnimation, ImageAnimation
 
 def main():
     # put some png in input/ dir before run main.py
-    img = ImageAnimation('input/img.png')
+    img = ImageAnimation('XOsX.gif')
     BatchAnimation(img)
 
 

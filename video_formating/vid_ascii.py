@@ -31,6 +31,10 @@ cls\n
             with open('output/batch/output.bat', 'w') as f2:
                 f2.write(pattern_top)
                 for line in f1:
-                    if line.strip() != '':
-                        f2.write(f"echo {line}")
-                f2.write('pause >nul')
+                    if line.strip():
+                        stripped_line = line.strip()
+                        if stripped_line and stripped_line not in ['ping localhost -n 1 >nul', 'cls']:
+                            f2.write(f"echo {line}")
+                        else:
+                            f2.write(f"{line}")
+                f2.write('goto :output')
